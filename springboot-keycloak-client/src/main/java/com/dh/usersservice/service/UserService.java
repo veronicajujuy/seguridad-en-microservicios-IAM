@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.dh.usersservice.model.User;
+import com.dh.usersservice.model.UserRequest;
 import com.dh.usersservice.repository.IUserRepository;
 
 @Service
@@ -21,5 +22,9 @@ public class UserService {
 
 	public List<User> findByName(String name) {
 		return userRepository.findByUsername(name);
+	}
+
+	public User createUser(UserRequest userRequest) {
+		return userRepository.createUser(userRequest);
 	}
 }
